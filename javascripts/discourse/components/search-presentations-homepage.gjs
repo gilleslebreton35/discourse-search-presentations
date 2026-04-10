@@ -5,8 +5,9 @@ export default class SearchPresentationsHomepage extends Component {
   @service router;
 
   get isHomepage() {
-    return this.router.currentURL === "/";
-  }
+  const url = this.router.currentURL;
+  return url === "/" || url === "/latest" || url === "/categories" || url === "/top";
+}
 
   get placeholder() {
     return settings.search_placeholder || "Rechercher dans les présentations";
