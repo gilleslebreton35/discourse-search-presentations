@@ -1,0 +1,34 @@
+search_category_1:
+  type: string
+  default: presentation-jeux
+  description:
+    en: "Slug of the first category"
+    fr: "Slug de la première catégorie"
+
+search_category_2:
+  type: string
+  default: presentation-jeux-a-campagne
+  description:
+    en: "Slug of the second category"
+    fr: "Slug de la deuxième catégorie"
+
+search_category_3:
+  type: string
+  default: ""
+  description:
+    en: "Slug of the third category"
+    fr: "Slug de la troisième catégorie"
+
+search_placeholder:
+  type: string
+  default: "Rechercher dans les présentations"
+  description:
+    en: "Placeholder text for the search input"
+    fr: "Texte affiché dans le champ de recherche"
+
+search_button_label:
+  type: string
+  default: "Rechercher"
+  description:
+    en: "Label for the search button"
+    fr: "Texte du bouton de recherche"
