@@ -1,3 +1,15 @@
-<div style="padding: 1rem; background: red; color: white;">
-  TEST BARRE RECHERCHE
-</div>
+{{#if this.isHomepage}}
+  <div class="search-presentations">
+    <form class="search-presentations__form" {{on "submit" this.submitSearch}}>
+      <input
+        class="search-presentations__input"
+        type="search"
+        placeholder={{this.placeholder}}
+        aria-label={{this.placeholder}}
+      >
+      <button class="search-presentations__button" type="submit">
+        {{this.buttonLabel}}
+      </button>
+    </form>
+  </div>
+{{/if}}
