@@ -5,9 +5,9 @@ import { defaultHomepage } from "discourse/lib/utilities";
 export default class SearchPresentationsHomepage extends Component {
   @service router;
 
-  get isHomepage() {
-    return this.router.currentRouteName === `discovery.${defaultHomepage()}`;
-  }
+get isHomepage() {
+  return true;
+}
 
   get placeholder() {
     return settings.search_placeholder || "Rechercher dans les présentations";
