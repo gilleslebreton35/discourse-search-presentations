@@ -1,13 +1,13 @@
 import Component from "@glimmer/component";
 import { service } from "@ember/service";
+import { defaultHomepage } from "discourse/lib/utilities";
 
 export default class SearchPresentationsHomepage extends Component {
   @service router;
 
   get isHomepage() {
-  const url = this.router.currentURL;
-  return url === "/" || url === "/latest" || url === "/categories" || url === "/top";
-}
+    return this.router.currentRouteName === `discovery.${defaultHomepage()}`;
+  }
 
   get placeholder() {
     return settings.search_placeholder || "Rechercher dans les présentations";
@@ -31,7 +31,8 @@ export default class SearchPresentationsHomepage extends Component {
   submitSearch = (event) => {
     event.preventDefault();
 
-    const input = event.target.querySelector(".search-presentations__input");
+    const form = event.target;
+    const input = form.querySelector(".search-presentations__input");
     const userQuery = input?.value?.trim() || "";
 
     const scopedPart = this.categoriesQuery
