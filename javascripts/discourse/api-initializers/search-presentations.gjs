@@ -1,6 +1,6 @@
 import { apiInitializer } from "discourse/lib/api";
-import OrangeBanner from "../components/orange-banner";
+import SearchPresentationsHomepage from "../components/search-presentations-homepage";
 
 export default apiInitializer((api) => {
-  api.renderInOutlet("above-main-container", OrangeBanner);
+  api.renderInOutlet("above-main-container", SearchPresentationsHomepage);
 });
