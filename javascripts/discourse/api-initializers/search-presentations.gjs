@@ -1,6 +1,14 @@
 import { apiInitializer } from "discourse/lib/api";
-import SearchPresentationsHomepage from "../components/search-presentations-homepage";
+import Component from "@glimmer/component";
+
+class OrangeBanner extends Component {
+  <template>
+    <div style="padding: 1rem; background: orange; color: black;">
+      COMPOSANT INLINE OK
+    </div>
+  </template>
+}
 
 export default apiInitializer((api) => {
-  api.renderInOutlet("above-main-container", SearchPresentationsHomepage);
+  api.renderInOutlet("above-main-container", OrangeBanner);
 });
