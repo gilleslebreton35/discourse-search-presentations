@@ -2,6 +2,10 @@ import Component from "@glimmer/component";
 import { action } from "@ember/object";
 
 export default class SearchPresentationsHomepage extends Component {
+  get isHomepage() {
+    return true;
+  }
+
   get placeholder() {
     return settings.search_placeholder || "Rechercher dans les présentations";
   }
@@ -39,18 +43,20 @@ export default class SearchPresentationsHomepage extends Component {
   }
 
   <template>
-    <div class="search-presentations">
-      <form class="search-presentations__form" {{on "submit" this.submitSearch}}>
-        <input
-          class="search-presentations__input"
-          type="search"
-          placeholder={{this.placeholder}}
-          aria-label={{this.placeholder}}
-        />
-        <button class="search-presentations__button" type="submit">
-          {{this.buttonLabel}}
-        </button>
-      </form>
-    </div>
+    {{#if this.isHomepage}}
+      <div class="search-presentations">
+        <form class="search-presentations__form" {{on "submit" this.submitSearch}}>
+          <input
+            class="search-presentations__input"
+            type="search"
+            placeholder={{this.placeholder}}
+            aria-label={{this.placeholder}}
+          />
+          <button class="search-presentations__button" type="submit">
+            {{this.buttonLabel}}
+          </button>
+        </form>
+      </div>
+    {{/if}}
   </template>
 }
