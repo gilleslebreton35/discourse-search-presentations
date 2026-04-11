@@ -1,14 +1,9 @@
-import { apiInitializer } from "discourse/lib/api";
 import Component from "@glimmer/component";
 
-class SearchPresentationsHomepage extends Component {
+export default class SearchPresentationsHomepage extends Component {
   <template>
-    <div style="padding: 1rem; background: orange; color: black;">
-      COMPOSANT INLINE OK
+    <div style="padding: 1rem; background: #0069d9; color: white;">
+      TEST RECHERCHE 1
     </div>
   </template>
 }
-
-export default apiInitializer((api) => {
-  api.renderInOutlet("above-main-container", SearchPresentationsHomepage);
-});
